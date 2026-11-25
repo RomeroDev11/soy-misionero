@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pequeños Misioneros</title>
+<title>Pequeños Misioneros (Copy)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@600;800&family=Nunito:wght@400;700;800&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
@@ -277,6 +277,8 @@ h3.et{font-size:1.05rem;color:var(--tenue)}
 .ay11.listo span{background:var(--oro);color:var(--tinta)}
 .cruz11{position:absolute;right:112px;bottom:22px;width:64px;height:64px;border-radius:16px;background:#fff3b0;color:var(--tinta);border:4px solid var(--plomo);border-bottom-width:7px;font-weight:800;font-size:.95rem}
 .cruz11[disabled]{opacity:.5}
+.rayo11{position:absolute;right:14px;bottom:118px;width:88px;min-height:54px;padding:4px;border-radius:14px;background:linear-gradient(#e6f4ff,#58b7f0);color:var(--tinta);border:4px solid var(--plomo);border-bottom-width:7px;font-weight:800;font-size:.85rem;line-height:1.1;box-shadow:0 0 16px #9fd8ff;animation:latir 1s ease-in-out infinite}
+.rayo11[hidden],.mundo.final .rayo11{display:none}
 .capa10.cielo{background:radial-gradient(circle at 50% 30%,rgba(255,243,176,.55),rgba(10,11,34,.85));align-items:center}
 .hoja.ayuda{text-align:center;align-items:center}
 .hoja.ayuda img{width:min(100%,260px);border-radius:16px;border:4px solid var(--plomo)}
@@ -289,6 +291,8 @@ h3.et{font-size:1.05rem;color:var(--tenue)}
 .catpie{text-align:center;padding:70px 0 4px}
 .lnk{color:var(--tenue);font-weight:700;font-size:.85rem;text-decoration:underline;padding:8px;min-height:36px}
 #fCat input{font-weight:700;font-size:1.05rem}
+.firma{text-align:center;color:var(--tenue);font-size:.8rem;font-weight:700;padding:14px 0 4px}
+.firma a{color:var(--oro);text-decoration:none}
 .oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .pixel{font-family:"Pixelify Sans",var(--display)!important;letter-spacing:.02em}
 .retrato{width:72px;height:96px;flex:none;object-fit:contain;image-rendering:pixelated;background:#cfe8b0;border:3px solid var(--plomo);border-radius:10px}
@@ -686,7 +690,8 @@ function inicio(){
         <div class="pjs">${Object.keys(PJ).map(k=>`<button type="button" class="pj" id="pj-${k}" data-act="pj" data-id="${k}" aria-pressed="${k===pjDe()}" aria-label="${PJ[k].d}"><img src="${PJIMG[k]}" alt=""></button>`).join('')}</div>
         <p class="nota">Todos llevan la pañoleta de la Infancia Misionera.</p></div>
       <button class="btn" type="submit">Empezar el camino</button>
-    </form></div>`;
+    </form>
+    <p class="firma">Desarrollado por <a href="https://github.com/RomeroDev11" target="_blank" rel="noopener">RomeroDev11</a></p></div>`;
   $('#fInicio').addEventListener('submit', e=>{
     e.preventDefault();
     const n=$('#nombre').value.trim();
@@ -713,7 +718,8 @@ function mapa(){
         <span class="nom">${nv.lugar}</span><span class="tema">${ab?nv.tema:(nv.listo?'Cerrado':'Muy pronto')}</span>
         ${nv.listo?estrellas(s):''}</button>`; }).join('')}
   </div>
-  ${CATEQUISTA?'':'<div class="catpie"><button class="lnk" type="button" data-act="catequista">Soy catequista</button></div>'}`;
+  ${CATEQUISTA?'':'<div class="catpie"><button class="lnk" type="button" data-act="catequista">Soy catequista</button></div>'}
+  <p class="firma">Desarrollado por <a href="https://github.com/RomeroDev11" target="_blank" rel="noopener">RomeroDev11</a></p>`;
   const el=$('#est'+act); if(el) el.scrollIntoView({block:'center'});
 }
 
@@ -1804,10 +1810,10 @@ function n11(){
     ${guia(`${esc(S.name)}, ayudaste a los cinco continentes, pero una gran sombra cubrió el cielo: es el dragón de sombra, que quiere apagar la luz de los niños con tentaciones. No vas solo: la gracia de Dios te acompaña y el cielo vendrá en tu ayuda.`)}
     <div class="hoja pila como"><h3 style="font-size:1.15rem">Cómo jugar</h3>
       <p>${ico('#fff','↔')}<span>Arrastra el dedo para moverte y esquivar las sombras de las tentaciones.</span></p>
-      <p>${ico('#f6c445','✦')}<span>Toca <b>Luz</b> para lanzar un rayo a la tentación más cercana. Cada rayo gasta un poco de fe.</span></p>
+      <p>${ico('#f6c445','✦')}<span>Toca <b>Luz</b> para lanzar un rayo a la tentación más cercana. Cada rayo gasta un poco de fe. Las sombras grandes necesitan dos rayos y, al vencerlas, una nube te enseña cómo se vence esa tentación.</span></p>
       <p>${ico('#fff3b0','✝')}<span>Toca <b>Cruz</b> para protegerte unos segundos.</span></p>
-      <p>${ico('#58b7f0','M')}<span>Ve al altar de María, abajo a la izquierda, y reza una decena del rosario para recuperar fe y gracia.</span></p>
-      <p>${ico('#9ff0c8','★')}<span>Al vencer muchas tentaciones vienen a ayudarte San Rafael, San Gabriel, San Miguel y la Virgen María.</span></p>
+      <p>${ico('#58b7f0','M')}<span>Ve al altar de María, abajo a la izquierda. Pídele por alguien para llenar tu fe, o reza una decena del rosario para recibir los tres rayos de la Santísima Trinidad, que rompen el escudo del dragón.</span></p>
+      <p>${ico('#9ff0c8','★')}<span>Al vencer muchas tentaciones vienen a ayudarte San Rafael, San Gabriel y San Miguel. La Virgen María llega al final, cuando el dragón está casi vencido, para darle el golpe definitivo.</span></p>
       <p>${ico('#3b1f55','!')}<span style="flex:1">El dragón tiene un escudo que se rompe cuando vences tentaciones. Al final, solo la Virgen María puede vencerlo.</span></p></div>
     <button class="btn" type="button" data-act="aJugar11">Entrar a la Noche Oscura</button></div>`;
 }
@@ -1844,7 +1850,7 @@ function fondo11(){
 function batalla11(){
   if(!SPR) SPR=crearSprites(); if(!SPR11) SPR11=sprites11(); if(!FONDO11) FONDO11=fondo11();
   if(!IMG11){ IMG11={}; IMG11.dragon=new Image(); IMG11.dragon.src=ILUS11.dragon; IMG11.cut={}; ['miguel','gabriel','rafael'].forEach(k=>{ IMG11.cut[k]=new Image(); IMG11.cut[k].src=ILUS11[k+'Sola']||ILUS11[k]; }); IMG11.cut.maria=new Image(); IMG11.cut.maria.src=ILUS11.mariaSola; IMG11.trinidad=new Image(); IMG11.trinidad.src=ILUS11.trinidad||''; IMG11.angel=new Image(); IMG11.angel.src=ILUS11.angel||''; AYUDAS.forEach(a=>{ IMG11[a.id]=new Image(); IMG11[a.id].src=ILUS11[a.id]; }); }
-  B={jug:{x:180,y:470,mov:false}, img:Object.assign(new Image(),{src:PJIMG[pjDe()]}), gracia:100, fe:60, sombras:[], tiros:[], fuegos:[], items:[], flot:[],
+  B={jug:{x:180,y:470,mov:false}, img:Object.assign(new Image(),{src:PJIMG[pjDe()]}), gracia:100, fe:60, sombras:[], tiros:[], fuegos:[], items:[], flot:[], boom:[], nubes:[], nSom:0, rayo:0, rayoFx:null, ros:0, intencion:'',
      vida:300, escudo:true, escudoT:0, rotas:0, victorias:0, prox:2, proxFuego:6, proxItem:10, cruz:0, cdCruz:0, cdLuz:0, congelado:0, altarCd:0, enAltar:false,
      ayudas:{}, caidas:0, golpes:0, inv:0, joy:null, pausa:false, hit:0, fin:false, eucaristia:false, banner:null, t:0, ultAviso:-9, fase:0};
   AYUDAS.forEach(a=>B.ayudas[a.id]={usado:null});
@@ -1860,6 +1866,7 @@ function batalla11(){
     <span class="oculto" id="estado11" aria-live="polite"></span>
     <button class="cruz11 pixel" type="button" id="cz11" data-act="cruz11">Cruz</button>
     <button class="rezar pixel" type="button" id="lz11" data-act="luz11">Luz</button>
+    <button class="rayo11 pixel" type="button" id="rm11" data-act="rayo11" hidden>Rayo de María</button>
     <div id="modal11"></div></div>`;
   const cv=$('#cv11');
   cv.addEventListener('pointerdown', e=>{ if(!B||B.pausa) return; const b=cv.getBoundingClientRect(); B.joy={id:e.pointerId, ox:e.clientX-b.left, oy:e.clientY-b.top, dx:0, dy:0}; try{ cv.setPointerCapture(e.pointerId); }catch(_){} });
@@ -1876,12 +1883,13 @@ addEventListener('keydown', e=>{
   if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d'].includes(k)){ e.preventDefault(); TECLAS.add(k); }
   else if(k===' '){ e.preventDefault(); if(!e.repeat) luz11(); }
   else if(k==='c'){ cruz11(); }
+  else if(k==='r'){ rayo11(); }
 });
 function bucle11(ts){
   if(pantalla!=='batalla'||!B||B.token!==TOK11) return;
   const dt=Math.min(.05,((ts-(B.ult||ts))/1000)||0); B.ult=ts;
   if(B.anim){ B.anim.t+=dt; B.t+=dt;
-    if(B.anim.t>4.8 && !B.anim.boton){ B.anim.boton=true; const m=$('#modal11'); if(m) m.innerHTML='<div class="final11"><button class="btn" type="button" data-act="ganar11">Aceptar y reclamar mi certificado</button></div>'; } }
+    if(B.anim.t>4.8 && !B.anim.boton){ B.anim.boton=true; const m=$('#modal11'); if(m) m.innerHTML='<div class="final11"><button class="btn" type="button" data-act="ganar11">¡Gloria a Dios! Sigo mi camino al cielo</button></div>'; } }
   else if(B.cine && !capa.innerHTML) avanzarCine11(dt);
   else if(!B.pausa && !capa.innerHTML) actualizar11(dt);
   dibujar11(); requestAnimationFrame(bucle11);
@@ -1893,16 +1901,63 @@ function dano11(n){
   const f=fase11();
   if(f!==antes){ SONIDO.efecto('fase'); B.escudo=true; B.rotas=0; B.fase=f; B.banner={txt:f===1?'¡El dragón se enfurece!':'¡Última batalla!', t:0};
     if(f===2 && !B.eucaristia){ B.eucaristia=true; B.items.push({tipo:'hostia', x:180, y:430, t:0, vida:999}); aviso('Apareció la Eucaristía: Jesús te da toda su fuerza. Ve por ella.'); } }
-  if(B.vida<=1 && f===2) B.banner={txt:'¡Llama a la Virgen María!', t:0};
+  if(B.vida<=1 && f===2){ B.banner={txt:'¡Llama a la Virgen María!', t:0}; if(!B.ayudas.maria.avisado){ B.ayudas.maria.avisado=true; aviso('¡El dragón está casi vencido! Toca a la Virgen María para el golpe final.'); } }
 }
 function vencer11(s, como){
   B.victorias++; B.rotas++; SONIDO.efecto('vencida');
-  flot11('¡Vencida!','#c9f3e2',s.x,s.y-20);
-  if(B.t-B.ultAviso>3){ B.ultAviso=B.t; aviso(`Venciste "${s.t.l}". ${s.t.r}`); }
+  explosion11(s.x,s.y,!!s.grande);
+  if(s.grande){ B.nubes.push({x:s.x, y:s.y-10, t:0, l:s.t.l, r:s.t.r}); B.nubes=B.nubes.slice(-3); }
   if(B.escudo && B.rotas>=FASES[B.fase].escudo){ B.escudo=false; B.escudoT=12; B.banner={txt:'¡El escudo se rompió! Lanza luz al dragón', t:0}; SONIDO.efecto('escudo'); }
   AYUDAS.forEach(a=>{ if(disponible11(a) && !B.ayudas[a.id].avisado){ B.ayudas[a.id].avisado=true; aviso(`¡${a.nombre} viene a ayudarte! Toca su imagen.`); } });
 }
-function disponible11(a){ const u=B.ayudas[a.id].usado; return B.victorias>=a.umbral && (u===null || B.victorias>=u+a.recarga); }
+function explosion11(x,y,grande){
+  const cols=grande?['#ffffff','#fff3b0','#f6c445','#c9a2ff']:['#d8b8ff','#ffffff'], p=[];
+  for(let q=0;q<(grande?30:8);q++) p.push({a:Math.random()*Math.PI*2, v:(grande?40+Math.random()*60:12+Math.random()*14), col:cols[q%cols.length]});
+  B.boom.push({x,y,t:0,dur:grande?.9:.4,grande,p});
+}
+function fxTick11(dt){
+  if(B.rayoFx){ B.rayoFx.t+=dt; if(B.rayoFx.t>1.8) B.rayoFx=null; }
+  B.boom.forEach(b=>b.t+=dt); B.boom=B.boom.filter(b=>b.t<b.dur);
+  B.nubes.forEach(n=>n.t+=dt); B.nubes=B.nubes.filter(n=>n.t<5);
+  B.sombras.forEach(s=>{ if(s.hit>0) s.hit=Math.max(0,s.hit-dt); });
+}
+function lineas11(ctx,t,max){ const out=[]; let cur=''; String(t).split(' ').forEach(w=>{ const p=cur?cur+' '+w:w; if(ctx.measureText(p).width>max && cur){ out.push(cur); cur=w; } else cur=p; }); if(cur) out.push(cur); return out; }
+function fx11(ctx,X,Y,z,cw){
+  if(B.rayoFx){ const R=TRINIDAD11[B.rayoFx.k]||TRINIDAD11[0], t=B.rayoFx.t, x0=X(B.rayoFx.x), y0=Y(B.rayoFx.y), x1=X(180), y1=Y(120);
+    if(t<.9){ ctx.save(); ctx.globalAlpha=Math.max(0,1-t/.9); ctx.lineCap='round';
+      [[30,R.luz],[16,R.c],[6,'#ffffff']].forEach(([w,c])=>{ ctx.lineWidth=w*z; ctx.strokeStyle=c; ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,y1); ctx.stroke(); });
+      ctx.restore(); }
+    const a=t<.2?t/.2:t>1.2?Math.max(0,1-(t-1.2)/.6):1;
+    ctx.save(); ctx.globalAlpha=a; ctx.font='700 20px "Pixelify Sans", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.lineJoin='round';
+    const ls=lineas11(ctx,R.txt,cw-40); let ty=Y(250)-t*14-(ls.length-1)*12;
+    ls.forEach(l=>{ ctx.lineWidth=6; ctx.strokeStyle='#140f1f'; ctx.strokeText(l,cw/2,ty); ctx.fillStyle=R.c; ctx.fillText(l,cw/2,ty); ty+=24; });
+    ctx.restore(); }
+  B.boom.forEach(b=>{ const p=b.t/b.dur, e=1-Math.pow(1-p,3), cx=X(b.x), cy=Y(b.y);
+    ctx.save();
+    if(b.grande){ const r=(20+70*e)*z; ctx.globalAlpha=Math.max(0,1-p*1.3);
+      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,r); g.addColorStop(0,'rgba(255,255,240,.95)'); g.addColorStop(.4,'rgba(255,220,120,.6)'); g.addColorStop(1,'rgba(255,200,100,0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha=Math.max(0,1-p); ctx.lineWidth=Math.max(1,5*z*(1-p)); ctx.strokeStyle='#ffffff'; ctx.beginPath(); ctx.arc(cx,cy,(10+95*e)*z,0,Math.PI*2); ctx.stroke(); }
+    ctx.globalAlpha=Math.max(0,1-p);
+    b.p.forEach(q=>{ const d=q.v*e, s=(b.grande?5:3)*z*(1-p*.6); ctx.fillStyle=q.col; ctx.fillRect(X(b.x+Math.cos(q.a)*d)-s/2, Y(b.y+Math.sin(q.a)*d)-s/2, s, s); });
+    ctx.restore(); });
+  B.nubes.forEach((n,k)=>{ const t=n.t, a=t<.3?t/.3:t>3.2?Math.max(0,1-(t-3.2)/1.8):1; if(a<=0) return;
+    const yy=Y(n.y-t*30)-k*6;
+    ctx.save(); ctx.globalAlpha=a; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.font='700 13px "Pixelify Sans", monospace'; const tl=lineas11(ctx,'¡Venciste: '+n.l+'!',170);
+    ctx.font='700 13px Nunito, sans-serif'; const br=lineas11(ctx,n.r,170);
+    let mw=0; ctx.font='700 13px "Pixelify Sans", monospace'; tl.forEach(l=>mw=Math.max(mw,ctx.measureText(l).width)); ctx.font='700 13px Nunito, sans-serif'; br.forEach(l=>mw=Math.max(mw,ctx.measureText(l).width));
+    const bw=mw+30, bh=(tl.length+br.length)*17+22, cx=Math.max(bw/2+8,Math.min(cw-bw/2-8,X(n.x))), top=yy-bh/2;
+    ctx.shadowColor='rgba(255,240,180,.9)'; ctx.shadowBlur=14; ctx.fillStyle='rgba(255,255,255,.96)';
+    ctx.beginPath(); if(ctx.roundRect) ctx.roundRect(cx-bw/2,top,bw,bh,18); else ctx.rect(cx-bw/2,top,bw,bh); ctx.fill();
+    const nb=Math.max(3,Math.round(bw/34));
+    for(let q=0;q<nb;q++){ const px=cx-bw/2+18+q*(bw-36)/Math.max(1,nb-1); ctx.beginPath(); ctx.arc(px,top+2,13+(q%2)*5,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(px+6,top+bh-2,10+((q+1)%2)*4,0,Math.PI*2); ctx.fill(); }
+    ctx.shadowBlur=0; let ly=top+19;
+    ctx.font='700 13px "Pixelify Sans", monospace'; ctx.fillStyle='#8a2b3d'; tl.forEach(l=>{ ctx.fillText(l,cx,ly); ly+=17; });
+    ctx.font='700 13px Nunito, sans-serif'; ctx.fillStyle='#1b1c44'; br.forEach(l=>{ ctx.fillText(l,cx,ly); ly+=17; });
+    ctx.restore(); });
+}
+function disponible11(a){ if(a.id==='maria') return B.fase===2 && B.vida<=1 && !B.fin; const u=B.ayudas[a.id].usado; return B.victorias>=a.umbral && (u===null || B.victorias>=u+a.recarga); }
 function actualizar11(dt){
   const j=B.jug, F=FASES[B.fase]; B.t+=dt;
   ['cdCruz','cdLuz','cruz','congelado','altarCd','inv','hit','escudoT'].forEach(k=>{ if(B[k]>0) B[k]=Math.max(0,B[k]-dt); });
@@ -1919,17 +1974,19 @@ function actualizar11(dt){
     if(B.prox<=0 && B.sombras.length<14){ B.prox=F.cada*(.7+Math.random()*.6);
       const t=TENTACIONES[Math.floor(Math.random()*TENTACIONES.length)], lado=Math.random();
       const p = lado<.5 ? {x:180+(Math.random()*80-40), y:185} : {x:Math.random()<.5?10:AW-10, y:260+Math.random()*200};
-      B.sombras.push({t, x:p.x, y:p.y, vel:F.vel*(.8+Math.random()*.4)}); }
+      B.nSom++; const gr=B.nSom%5===0;
+      B.sombras.push({t, x:p.x, y:p.y, vel:F.vel*(gr?.65:(.8+Math.random()*.4)), grande:gr, vida:gr?2:1, hit:0});
+      if(gr && B.nSom===5) B.banner={txt:'¡Una sombra grande! Lánzale dos rayos de luz', t:0}; }
     if(F.fuego){ B.proxFuego-=dt; if(B.proxFuego<=0){ B.proxFuego=F.fuego; const dx=j.x-180, dy=j.y-30-170, d=Math.hypot(dx,dy)||1; B.fuegos.push({x:180, y:170, vx:dx/d*150, vy:dy/d*150}); } }
   }
   B.proxItem-=dt; if(B.proxItem<=0){ B.proxItem=12+Math.random()*6; const bib=Math.random()<.5; B.items.push({tipo:bib?'biblia':'agua', x:40+Math.random()*(AW-80), y:280+Math.random()*210, t:0, vida:11}); }
   // tentaciones
   for(const s of B.sombras){
     if(B.congelado<=0){ const dx=j.x-s.x, dy=(j.y-20)-s.y, d=Math.hypot(dx,dy)||1; s.x+=dx/d*s.vel*dt; s.y+=dy/d*s.vel*dt; }
-    if(Math.hypot(j.x-s.x,(j.y-20)-s.y)<24){
+    if(Math.hypot(j.x-s.x,(j.y-20)-s.y)<(s.grande?34:24)){
       s.muerta=true;
       if(B.cruz>0) vencer11(s);
-      else if(B.inv<=0){ B.gracia-=10; B.golpes++; B.inv=.9; SONIDO.efecto('golpe'); flot11('-gracia','#ffb3bf',j.x,j.y-70); aviso(`Tentación: "${s.t.l}". Se vence así: ${s.t.r}`); }
+      else if(B.inv<=0){ B.gracia-=s.grande?15:10; B.golpes++; B.inv=.9; SONIDO.efecto('golpe'); flot11('-gracia','#ffb3bf',j.x,j.y-70); }
     }
   }
   // fuegos del dragón
@@ -1940,7 +1997,7 @@ function actualizar11(dt){
   for(const r of B.tiros){
     if(r.obj && !r.obj.muerta && r.obj!=='dragon'){ const dx=r.obj.x-r.x, dy=r.obj.y-r.y, d=Math.hypot(dx,dy)||1; r.vx=dx/d*430; r.vy=dy/d*430; }
     r.x+=r.vx*dt; r.y+=r.vy*dt;
-    for(const s of B.sombras){ if(!s.muerta && Math.hypot(s.x-r.x,s.y-r.y)<18){ s.muerta=true; r.muerta=true; vencer11(s); break; } }
+    for(const s of B.sombras){ if(!s.muerta && Math.hypot(s.x-r.x,s.y-r.y)<(s.grande?30:18)){ r.muerta=true; if(s.grande && --s.vida>0){ s.hit=.3; flot11('¡Otra vez!','#fff3b0',s.x,s.y-34); } else { s.muerta=true; vencer11(s); } break; } }
     if(!r.muerta && Math.hypot(r.x-180,r.y-120)<92){ r.muerta=true;
       if(B.escudo){ flot11('El escudo resiste','#d8b8ff',r.x,r.y); if(B.t-B.ultAviso>4){ B.ultAviso=B.t; aviso('El escudo del dragón resiste. Vence tentaciones para romperlo.'); } }
       else { dano11(6); flot11('-6','#fff3b0',r.x,r.y); } }
@@ -1958,6 +2015,7 @@ function actualizar11(dt){
   const da=Math.hypot(j.x-ALTAR.x, j.y-ALTAR.y);
   if(da<40 && !B.enAltar){ B.enAltar=true; if(B.altarCd<=0) rosario11(); else aviso(`Las velas del altar se están encendiendo. Vuelve en ${Math.ceil(B.altarCd)} segundos.`); }
   else if(da>60) B.enAltar=false;
+  fxTick11(dt);
   B.flot.forEach(f=>f.t+=dt); B.flot=B.flot.filter(f=>f.t<1.4);
   if(B.banner){ B.banner.t+=dt; if(B.banner.t>2.6 && !(B.vida<=1 && B.fase===2)) B.banner=null; }
   if(B.gracia<=0) caida11();
@@ -1972,8 +2030,9 @@ function hud11(){
   $('#estado11').textContent=`Gracia ${Math.ceil(B.gracia/10)} de 10. Fe ${Math.round(B.fe)}. Vencidas ${B.victorias}.`;
   const cz=$('#cz11'); cz.disabled=B.cdCruz>0||B.fe<20; cz.textContent=B.cdCruz>0?String(Math.ceil(B.cdCruz)):'Cruz';
   $('#lz11').disabled=B.fe<4;
+  const rm=$('#rm11'); if(rm){ rm.hidden=!(B.rayo>0); if(B.rayo>0){ const R=TRINIDAD11[3-B.rayo], h=`Rayo ×${B.rayo}<br><small>${R.n}</small>`; if(rm.dataset.h!==h){ rm.dataset.h=h; rm.innerHTML=h; rm.style.background=`linear-gradient(#ffffff,${R.c})`; rm.style.boxShadow=`0 0 16px ${R.c}`; } } }
   AYUDAS.forEach(a=>{ const b=$('#ay-'+a.id), disp=disponible11(a), u=B.ayudas[a.id].usado, falta=u===null? a.umbral-B.victorias : u+a.recarga-B.victorias;
-    b.classList.toggle('listo',disp); b.disabled=!disp; const t=disp?'¡Ya!':String(Math.max(0,falta)); const sp=b.querySelector('span'); if(sp.textContent!==t) sp.textContent=t; });
+    b.classList.toggle('listo',disp); b.disabled=!disp; const t=disp?'¡Ya!':a.id==='maria'?'Final':String(Math.max(0,falta)); const sp=b.querySelector('span'); if(sp.textContent!==t) sp.textContent=t; });
 }
 function luz11(){
   if(!B||B.pausa||B.cdLuz>0) return;
@@ -1989,30 +2048,97 @@ function cruz11(){
   if(B.fe<20){ aviso('Necesitas 20 de fe para la señal de la cruz.'); return; }
   B.fe-=20; B.cruz=3; B.cdCruz=7; SONIDO.efecto('cruz'); flot11('En el nombre del Padre…','#fff3b0',B.jug.x,B.jug.y-80);
 }
-function modal11(html){ const m=$('#modal11'); if(m) m.innerHTML=html; B.pausa=!!html; B.joy=null; TECLAS.clear(); if(html){ clearTimeout(tAviso); $('#aviso').classList.remove('on'); } }
-function rosario11(){ B.ros=0; pintarRosario11(); }
+function modal11(html){ clearInterval(TREZO11); const m=$('#modal11'); if(m) m.innerHTML=html; B.pausa=!!html; B.joy=null; TECLAS.clear(); if(html){ clearTimeout(tAviso); $('#aviso').classList.remove('on'); } }
+let TREZO11=null;
+const REZO11={
+  pn:'Padre nuestro, que estás en el cielo, santificado sea tu Nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén.',
+  am:'Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.',
+  gl:'Gloria al Padre, y al Hijo, y al Espíritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.'
+};
+const SEG11={pn:10, am:6, gl:4};
+const CHIPS11=['mi familia','mis amigos','los enfermos','los niños del mundo','los que están tristes'];
+const OIR11=()=>puedeHablar?'<button class="oir" type="button" data-act="oir11">Rezar en voz alta conmigo</button>':'';
+function rosario11(){ B.ros=B.ros||0; const sigue=B.ros>0;
+  modal11(`<div class="capa10"><div class="hoja pila">
+    <h3 class="et" style="color:#6b5a2a">Altar de María</h3>
+    <div class="guia">${ANGEL}<div class="dice"><p>La Virgen María escucha a los niños que le hablan con el corazón. ¿Qué quieres hacer?</p></div></div>
+    <button class="btn" type="button" data-act="intencion11">Pedir por alguien</button>
+    <button class="btn" type="button" data-act="decena11">${sigue?`Continuar la decena (${B.ros} de ${ROSARIO_CUENTAS.length})`:'Rezar una decena del rosario'}</button>
+    <p class="nota">Si rezas la decena completa, María te da <b>tres rayos de la Santísima Trinidad</b> (Padre, Hijo y Espíritu Santo): cada uno rompe el escudo del dragón y le hace daño.</p>
+    <button class="btn sec chico" type="button" data-act="salir11" style="align-self:center">Salir del altar</button></div></div>`);
+}
+function intencion11(){
+  modal11(`<div class="capa10"><div class="hoja pila">
+    <h3 class="et" style="color:#6b5a2a">Altar de María · Mi petición</h3>
+    <div class="guia">${ANGEL}<div class="dice"><p>¿Por quién o por qué quieres pedirle a María hoy? Escríbelo o elige una idea.</p></div></div>
+    <div class="catbtns">${CHIPS11.map(t=>`<button class="btn sec chico" type="button" data-act="chip11" data-t="${t}">${t.charAt(0).toUpperCase()+t.slice(1)}</button>`).join('')}</div>
+    <input type="text" id="int11" maxlength="60" autocomplete="off" placeholder="Por ejemplo: mi abuela">
+    <p class="pista" id="msg11"></p>
+    <button class="btn" type="button" data-act="ofrecer11">Seguir</button>
+    <button class="btn sec chico" type="button" data-act="altar11" style="align-self:center">Volver</button></div></div>`);
+  const i=$('#int11'); if(i){ i.focus(); i.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); ofrecer11(); } }); }
+}
+function ofrecer11(){
+  const i=$('#int11'), t=(i?i.value:'').trim().replace(/^por\s+/i,'');
+  if(t.length<3){ const m=$('#msg11'); if(m){ m.className='pista caja'; m.textContent='Escribe por quién o por qué quieres pedir.'; } return; }
+  B.intencion=t;
+  modal11(`<div class="capa10"><div class="hoja pila">
+    <h3 class="et" style="color:#6b5a2a">Altar de María · Mi oración</h3>
+    <div class="guia">${ANGEL}<div class="dice"><p>Cierra los ojos un momento y díselo a María con tu corazón. Puedes usar estas palabras o las tuyas.</p></div></div>
+    <div class="hoja" style="background:#fffaf0"><p id="rezoTxt" style="font-weight:700">Virgen María, Madre buena: hoy te pido por ${esc(t)}. Lleva mi oración a Jesús, cuídanos con tu amor y ayúdame a confiar siempre en Dios. Amén.</p>${OIR11()}</div>
+    <button class="btn" type="button" id="btnRezo11" data-act="amen11" disabled>Amén</button>
+    <button class="btn sec chico" type="button" data-act="altar11" style="align-self:center">Volver</button></div></div>`);
+  espera11(8);
+}
+function amen11(){
+  B.fe=100; B.gracia=Math.min(100,B.gracia+15); B.altarCd=25; modal11(''); SONIDO.efecto('gloria');
+  flot11('+fe  +gracia','#9fd8ff',B.jug.x,B.jug.y-80); aviso('María lleva tu oración a Jesús. Tu fe se llenó.');
+}
+function espera11(seg){
+  clearInterval(TREZO11); const b=$('#btnRezo11'); if(!b) return; let r=seg;
+  const pinta=()=>{ b.disabled=r>0; b.textContent=r>0?`Reza despacio… ${r}`:'Amén'; };
+  pinta(); TREZO11=setInterval(()=>{ if($('#btnRezo11')!==b){ clearInterval(TREZO11); return; } r--; pinta(); if(r<=0) clearInterval(TREZO11); },1000);
+}
+const TRINIDAD11=[
+  {n:'Padre', c:'#f6c445', luz:'rgba(246,196,69,.4)', txt:'¡Te reprendo en el nombre del Padre…'},
+  {n:'Hijo', c:'#ff6b81', luz:'rgba(226,69,95,.4)', txt:'…y del Hijo…'},
+  {n:'Espíritu Santo', c:'#9fd8ff', luz:'rgba(159,216,255,.45)', txt:'…y del Espíritu Santo! Amén.'}
+];
+const DANO_RAYO11=15;
+function rayo11(){
+  if(!B||B.pausa||B.cine||B.fin||!(B.rayo>0)) return;
+  const k=3-B.rayo, R=TRINIDAD11[k]; B.rayo--;
+  B.rayoFx={t:0, x:B.jug.x, y:B.jug.y-40, k};
+  SONIDO.efecto(k===2?'gloria':'luz'); SONIDO.efecto('escudo',.15);
+  dano11(DANO_RAYO11); B.escudo=false; B.escudoT=12; B.rotas=0; B.hit=.4;
+  explosion11(180,130,true); flot11('-'+DANO_RAYO11,R.c,180,190);
+  hud11();
+}
 function pintarRosario11(){
   const i=B.ros, tipo=ROSARIO_CUENTAS[i], am=ROSARIO_CUENTAS.slice(0,i+1).filter(x=>x==='am').length;
   const nombre = tipo==='am' ? `Ave María ${am} de 10` : ORAC11[tipo][0];
   modal11(`<div class="capa10"><div class="hoja pila">
     <h3 class="et" style="color:#6b5a2a">Altar de María · Una decena del rosario</h3>
+    ${B.intencion?`<p class="cuenta" style="color:#6b5a2a">Ofreces esta decena por ${esc(B.intencion)}.</p>`:''}
     <div class="ctas">${ROSARIO_CUENTAS.map((t,k)=>`<span class="cta ${t==='pn'?'grande':t==='gl'?'gl':''} ${k<i?'hecho':k===i?'ahora':''}"></span>`).join('')}</div>
-    <div class="guia">${ANGEL}<div class="dice"><p><b>${nombre}.</b> ${ORAC11[tipo][1]}</p></div></div>
+    <div class="guia">${ANGEL}<div class="dice"><p><b>${nombre}.</b> Rézalo despacio, con el corazón.</p></div></div>
+    <div class="hoja" style="background:#fffaf0"><p id="rezoTxt" style="font-weight:700">${REZO11[tipo]}</p>${OIR11()}</div>
     <p class="cuenta" style="color:#6b5a2a">Mientras rezas, las sombras no te pueden tocar.</p>
-    <button class="btn" type="button" data-act="rezar11">Rezar: ${nombre}</button>
+    <button class="btn" type="button" id="btnRezo11" data-act="rezar11" disabled>Amén</button>
     <button class="btn sec chico" type="button" data-act="salir11" style="align-self:center">Salir del altar</button></div></div>`);
+  espera11(SEG11[tipo]||5);
 }
 function rezarCuenta11(){
   const tipo=ROSARIO_CUENTAS[B.ros]; SONIDO.efecto(tipo==='gl'?'gloria':'cuenta');
   B.fe=Math.min(100,B.fe+(tipo==='am'?7:5)); if(tipo==='am') B.gracia=Math.min(100,B.gracia+2);
   B.ros++;
-  if(B.ros>=ROSARIO_CUENTAS.length){ B.gracia=Math.min(100,B.gracia+10); B.altarCd=25; modal11(''); aviso('¡Rezaste una decena del rosario! Tu fe y tu gracia se llenaron. Las velas se encenderán otra vez en 25 segundos.'); }
+  if(B.ros>=ROSARIO_CUENTAS.length){ B.ros=0; B.fe=100; B.gracia=Math.min(100,B.gracia+10); B.rayo=3; B.altarCd=25; modal11(''); SONIDO.efecto('gloria'); B.banner={txt:'¡Tres rayos de la Santísima Trinidad!', t:0}; aviso('Rezaste una decena del rosario. María te dio tres rayos: Padre, Hijo y Espíritu Santo. Tócalos para romper el escudo del dragón.'); hud11(); }
   else pintarRosario11();
 }
 function ayuda11(id){
   const a=AYUDAS.find(x=>x.id===id); if(!disponible11(a)||B.pausa||B.cine) return;
   B.ayudas[id].usado=B.victorias; SONIDO.efecto('ayuda');
-  if(id==='maria' && B.fase===2){ B.sombras=[]; B.fuegos=[]; escenaFinal11(); return; }
+  if(id==='maria'){ B.sombras=[]; B.fuegos=[]; escenaFinal11(); return; }
   B.pendiente=id;
   modal11(`<div class="capa10 cielo"><div class="hoja pila ayuda">
     <img src="${ILUS11[id]}" alt="${a.nombre}">
@@ -2031,7 +2157,7 @@ function avanzarCine11(dt){
   if(!c.hecho && c.t>=CINE[c.id].golpe){ c.hecho=true; aplicar11(c.id); }
   ['hit','congelado','inv','escudoT'].forEach(k=>{ if(B[k]>0 && k==='hit') B[k]=Math.max(0,B[k]-dt); });
   B.flot.forEach(f=>f.t+=dt); B.flot=B.flot.filter(f=>f.t<1.4);
-  if(c.t>=2.4) B.cine=null;
+  fxTick11(dt); if(c.t>=2.4) B.cine=null;
   hud11();
 }
 function cine11(ctx,cw,ch,X,Y,z,ease){
@@ -2061,7 +2187,7 @@ function cine11(ctx,cw,ch,X,Y,z,ease){
   if(cfg.ataca && t>1 && t<1.25){ ctx.fillStyle=`rgba(255,255,255,${.6*(1-(t-1)/.25)})`; ctx.fillRect(0,0,cw,ch); }
 }
 function escenaFinal11(){
-  B.vida=0; B.fin=true; B.anim={t:0, boton:false}; B.sombras=[]; B.fuegos=[]; B.tiros=[]; B.items=[]; B.cruz=0; B.joy=null; B.banner=null;
+  B.vida=0; B.fin=true; B.anim={t:0, boton:false}; B.sombras=[]; B.fuegos=[]; B.tiros=[]; B.items=[]; B.nubes=[]; B.boom=[]; B.cruz=0; B.joy=null; B.banner=null;
   B.jug.x=180; B.jug.y=490; TECLAS.clear(); SONIDO.tocar('vic'); SONIDO.efecto('pisada',1.9);
   clearTimeout(tAviso); $('#aviso').classList.remove('on');
   const m=view.querySelector('.mundo'); if(m) m.classList.add('final');
@@ -2169,8 +2295,10 @@ function dibujar11(){
     const g=ctx.createRadialGradient(X(it.x),Y(it.y),0,X(it.x),Y(it.y),22*z); g.addColorStop(0,'rgba(255,240,170,.5)'); g.addColorStop(1,'rgba(255,240,170,0)'); ctx.fillStyle=g; ctx.fillRect(X(it.x)-22*z,Y(it.y)-22*z,44*z,44*z);
     ctx.drawImage(sp, X(it.x)-sp.width*k/2, Y(it.y)-sp.height*k/2+b, sp.width*k, sp.height*k); });
   // tentaciones
-  B.sombras.forEach(s=>{ const sp=SPR.pecado[Math.floor(B.t*3+s.x)%2], k=z*1.7;
-    ctx.save(); if(B.congelado>0) ctx.filter='grayscale(1) brightness(1.6)';
+  B.sombras.forEach(s=>{ const sp=SPR.pecado[Math.floor(B.t*3+s.x)%2], k=z*(s.grande?2.9:1.7);
+    ctx.save();
+    if(s.grande){ const r=34*z, g=ctx.createRadialGradient(X(s.x),Y(s.y),0,X(s.x),Y(s.y),r); g.addColorStop(0,'rgba(140,60,210,.45)'); g.addColorStop(1,'rgba(140,60,210,0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(X(s.x),Y(s.y),r,0,Math.PI*2); ctx.fill(); }
+    if(B.congelado>0) ctx.filter='grayscale(1) brightness(1.6)'; else if(s.hit>0) ctx.filter='brightness(2.4)';
     ctx.drawImage(sp, X(s.x)-sp.width*k/2, Y(s.y)-sp.height*k/2, sp.width*k, sp.height*k); ctx.restore(); });
   // fuegos
   B.fuegos.forEach(f=>{ const g=ctx.createRadialGradient(X(f.x),Y(f.y),0,X(f.x),Y(f.y),12*z); g.addColorStop(0,'#ff6b81'); g.addColorStop(.5,'#7a2db0'); g.addColorStop(1,'rgba(60,20,90,0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(X(f.x),Y(f.y),12*z,0,Math.PI*2); ctx.fill(); });
@@ -2187,10 +2315,11 @@ function dibujar11(){
   if(B.cine) cine11(ctx,cw,ch,X,Y,z,ease);
   // textos
   const texto=(t,x,y,size,col)=>{ ctx.font=`700 ${size}px "Pixelify Sans", monospace`; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.lineJoin='round'; ctx.lineWidth=Math.max(3,size/4); ctx.strokeStyle='#140f1f'; ctx.strokeText(t,x,y); ctx.fillStyle=col; ctx.fillText(t,x,y); };
-  B.sombras.forEach(s=>texto(s.t.c, X(s.x), Y(s.y)+22*z, 11, '#ffc2cc'));
+  B.sombras.forEach(s=>{ if(s.grande) texto(s.t.c, X(s.x), Y(s.y)+36*z, 12, '#ffc2cc'); });
   texto(S.name, X(j.x), Y(j.y)+10, 12, '#f6c445');
   texto(listoAltar?'Altar de María':'Altar · '+Math.ceil(B.altarCd), X(ALTAR.x), Y(ALTAR.y)+10, 11, listoAltar?'#fff3b0':'#b9a6d6');
   B.flot.forEach(f=>{ ctx.globalAlpha=Math.max(0,1-f.t/1.4); texto(f.txt, X(f.x), Y(f.y)-f.t*30, 14, f.col); ctx.globalAlpha=1; });
+  fx11(ctx,X,Y,z,cw);
   if(B.banner){ const a=Math.min(1,B.banner.t*3); ctx.globalAlpha=a; ctx.fillStyle='rgba(20,15,31,.75)'; ctx.fillRect(0,Y(300)-22,cw,44); texto(B.banner.txt, cw/2, Y(300), 19, '#fff3b0'); ctx.globalAlpha=1; }
   // corazones de gracia
   const n=Math.max(0,Math.round(B.gracia/5)), hw=18;
@@ -2334,6 +2463,14 @@ function manejar(e,b,a,d){
   if(a==='cruz11'){ cruz11(); return; }
   if(a==='ayuda11'){ ayuda11(d.id); return; }
   if(a==='rezar11'){ rezarCuenta11(); return; }
+  if(a==='altar11'){ rosario11(); return; }
+  if(a==='intencion11'){ intencion11(); return; }
+  if(a==='chip11'){ const i=$('#int11'); if(i){ i.value=d.t; i.focus(); } return; }
+  if(a==='ofrecer11'){ ofrecer11(); return; }
+  if(a==='amen11'){ amen11(); return; }
+  if(a==='decena11'){ B.ros=B.ros||0; pintarRosario11(); return; }
+  if(a==='oir11'){ const t=$('#rezoTxt'); if(t) decir(t.textContent); return; }
+  if(a==='rayo11'){ rayo11(); return; }
   if(a==='salir11'){ B.altarCd=Math.max(B.altarCd,2); modal11(''); return; }
   if(a==='cerrar11'){ modal11(''); if(B&&B.pendiente){ B.cine={id:B.pendiente, t:0, hecho:false}; B.pendiente=null; B.joy=null; } return; }
   if(a==='ganar11'){ terminar11(); return; }
