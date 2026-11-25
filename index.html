@@ -326,8 +326,8 @@ h3.et{font-size:1.05rem;color:var(--tenue)}
 <script>
 /* ========= CONTENIDO EDITABLE POR EL CATEQUISTA ========= */
 const NIVELES = [
-  {n:1, lugar:'La puerta del templo', tema:'La señal de la cruz', g:['#58b7f0','#f6c445'], insignia:'Cruz de luz', listo:true, logro:'Ya sabes signarte, santiguarte y persignarte.',
-   repaso:'Signarse es hacer tres cruces pequeñas con el pulgar: en la frente, en la boca y en el pecho. Santiguarse es hacer una cruz grande, de la frente al pecho y del hombro izquierdo al derecho, diciendo: En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén. Persignarse es signarse y santiguarse, una cosa después de la otra.'},
+  {n:1, lugar:'La puerta del templo', tema:'La señal de la cruz', g:['#58b7f0','#f6c445'], insignia:'Cruz de luz', listo:true, logro:'Ya sabes signarte, santiguarte y persignarte. Es bueno persignarnos al empezar el día, antes de rezar y al salir de casa: así empezamos todo con Dios.',
+   repaso:'Signarse es hacer tres cruces pequeñas con el pulgar: en la frente, en la boca y en el pecho. Santiguarse es hacer una cruz grande, de la frente al pecho y del hombro izquierdo al derecho, diciendo: En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén. Persignarse es signarse y santiguarse, una cosa después de la otra. Es bueno persignarnos al empezar el día, antes de rezar y al salir de casa.'},
   {n:2, lugar:'El rincón de oración', tema:'Partes de la oración', g:['#e2455f','#f6c445'], insignia:'Vela encendida', listo:true, logro:'Puedes rezar esta oración hoy antes de dormir.',
    repaso:'Cuando oro: saludo a Dios, lo alabo, le doy gracias, le pido perdón y le pido por mí y por los demás. Termino diciendo Amén.'},
   {n:3, lugar:'El templo', tema:'Partes de la iglesia', g:['#2fbf8f','#58b7f0'], insignia:'Llave del templo', listo:true, logro:'La próxima vez que entres a la iglesia, busca cada uno de estos lugares.',
@@ -337,7 +337,7 @@ const NIVELES = [
   {n:5, lugar:'La celebración', tema:'Partes de la misa', g:['#e2455f','#58b7f0'], insignia:'Campana de la misa', listo:true, logro:'En la próxima misa, trata de reconocer en qué parte vas.',
    repaso:'La misa tiene cuatro partes. Ritos iniciales: nos reunimos, pedimos perdón y alabamos a Dios. Liturgia de la Palabra: Dios nos habla en las lecturas y el Evangelio. Liturgia Eucarística: el pan y el vino se convierten en el Cuerpo y la Sangre de Jesús y comulgamos. Rito de conclusión: recibimos la bendición y somos enviados.'},
   {n:6, lugar:'El calendario', tema:'Tiempos litúrgicos', g:['#2fbf8f','#9b6bf2'], insignia:'Rueda del año', listo:true, logro:'Fíjate este domingo de qué color está vestido el sacerdote.',
-   repaso:'El año litúrgico tiene: Adviento (morado), Navidad (blanco), Tiempo Ordinario (verde), Cuaresma (morado) y Pascua (blanco). El rojo se usa el Domingo de Ramos, el Viernes Santo y en Pentecostés.'},
+   repaso:'El año litúrgico tiene: Adviento (morado), Navidad (blanco), Tiempo Ordinario (verde), Cuaresma (morado) y Pascua (blanco). El rojo se usa el Domingo de Ramos, el Viernes Santo y en Pentecostés. En Adviento nos preparamos rezando, confesándonos y ayudando a los demás; la corona tiene cuatro velas. En Semana Santa acompañamos a Jesús: Domingo de Ramos, Jueves Santo (la Última Cena), Viernes Santo y Domingo de Resurrección.'},
   {n:7, lugar:'El jardín de María', tema:'El santo Rosario', g:['#58b7f0','#fff5dc'], insignia:'Rosa de María', listo:true, logro:'Esta semana puedes rezar una decena del rosario con tu familia.',
    repaso:'En el rosario: en el crucifijo se reza el Credo, en las cuentas grandes el Padre Nuestro, en las pequeñas el Ave María y al terminar cada decena el Gloria. Los misterios son gozosos (lunes y sábado), dolorosos (martes y viernes), gloriosos (miércoles y domingo) y luminosos (jueves).'},
   {n:8, lugar:'La biblioteca', tema:'Los evangelistas', g:['#f6c445','#e2455f'], insignia:'Pluma del evangelio', listo:true, logro:'En la misa, escucha de cuál evangelista es el Evangelio del día.',
@@ -465,10 +465,10 @@ const COLORES = {
   rojo:  {nombre:'Rojo',   hex:'#d63a4a', pista:'es el color de la sangre de Jesús y del fuego del Espíritu Santo.'}
 };
 const TIEMPOS = [
-  {id:'adviento', nombre:'Adviento', color:'morado', explica:'Son cuatro semanas de espera. Nos preparamos para la venida de Jesús. Con el Adviento empieza el año litúrgico.'},
+  {id:'adviento', nombre:'Adviento', color:'morado', explica:'Adviento significa «venida». Son cuatro semanas en las que nos preparamos para la venida de Jesús. La corona de Adviento tiene cuatro velas, una por cada domingo. Nos preparamos rezando, confesándonos y ayudando a los demás: preparamos el corazón, no solo la casa. Con el Adviento empieza el año litúrgico.'},
   {id:'navidad', nombre:'Navidad', color:'blanco', explica:'Celebramos con alegría que Jesús nació en Belén.'},
   {id:'ordinario', nombre:'Tiempo Ordinario', color:'verde', explica:'Es el tiempo más largo del año. Aprendemos de la vida y las enseñanzas de Jesús.'},
-  {id:'cuaresma', nombre:'Cuaresma', color:'morado', explica:'Son cuarenta días de oración, ayuno y limosna para prepararnos a la Pascua.'},
+  {id:'cuaresma', nombre:'Cuaresma', color:'morado', explica:'Son cuarenta días de oración, ayuno y limosna para prepararnos a la Pascua. Al final llega la Semana Santa: el Domingo de Ramos Jesús entra en Jerusalén; el Jueves Santo celebra la Última Cena y nos deja la Eucaristía; el Viernes Santo muere en la cruz por amor a nosotros; y el Domingo de Resurrección ¡resucita! La vivimos bien participando en las celebraciones y acompañando a Jesús con la oración.'},
   {id:'pascua', nombre:'Pascua', color:'blanco', explica:'Son cincuenta días de fiesta porque Jesús resucitó. Termina con Pentecostés.'},
   {id:'rojos', nombre:'Días de color rojo', color:'rojo', explica:'El rojo se usa el Domingo de Ramos, el Viernes Santo y en Pentecostés.'}
 ];
@@ -479,6 +479,7 @@ const CELEBRACIONES = [
   {t:'Tiempo Ordinario', d:'Aprendemos de las enseñanzas de Jesús.', c:'verde'},
   {t:'Cuaresma', d:'Cuarenta días para prepararnos a la Pascua.', c:'morado'},
   {t:'Domingo de Ramos', d:'Jesús entra en Jerusalén y recordamos su Pasión.', c:'rojo'},
+  {t:'Jueves Santo', d:'Jesús celebra la Última Cena y nos deja la Eucaristía.', c:'blanco'},
   {t:'Viernes Santo', d:'Jesús muere en la cruz por nosotros.', c:'rojo'},
   {t:'Pascua', d:'Jesús resucitó.', c:'blanco'},
   {t:'Pentecostés', d:'El Espíritu Santo viene sobre los apóstoles como lenguas de fuego.', c:'rojo'}
@@ -1351,6 +1352,73 @@ function crearFondo(){
   return {cv, tipo, W, H};
 }
 
+/* Banco extra de preguntas por continente: en cada partida se eligen 5 al azar (junto con las originales) */
+const BANCO10 = {
+  africa:[
+    {t:'¿Qué es santiguarse?', o:['Hacer una cruz grande de la frente al pecho y de hombro a hombro','Hacer tres cruces pequeñas','Juntar las manos'], pista:'Es la cruz grande.'},
+    {t:'¿Qué significa «Amén»?', o:['Así sea','Hasta luego','Buenas noches'], pista:'Lo decimos al terminar de rezar.'},
+    {t:'¿Qué decimos al signarnos?', o:['Por la señal de la Santa Cruz…','Dios te salve, María','Gloria al Padre'], pista:'Hablamos de la Santa Cruz.'},
+    {t:'¿Cuándo es bueno persignarnos?', o:['Al empezar el día, antes de rezar y al salir de casa','Solo en Navidad','Solo cuando estamos tristes'], pista:'Lo hacemos para empezar todo con Dios.'},
+    {t:'¿En qué parte de la oración pedimos por los demás?', o:['En la petición','En la alabanza','En el saludo'], pista:'Es cuando le pedimos algo a Dios.'},
+    {t:'¿Cuál de estas frases es para dar gracias?', o:['Gracias por mi familia','Perdóname cuando no obedezco','Cuida a los enfermos'], pista:'Empieza con la palabra «gracias».'},
+    {t:'¿En qué parte de la oración le pedimos perdón a Dios?', o:['En el perdón','En la alabanza','En el saludo'], pista:'Su nombre lo dice.'},
+    {t:'¿Cuántos son los mandamientos de la ley de Dios?', o:['Diez','Siete','Cinco'], pista:'Dios se los dio a Moisés en dos tablas de piedra.'},
+    {t:'¿Quién recibió los mandamientos en el monte Sinaí?', o:['Moisés','Noé','Abraham'], pista:'Guió al pueblo de Israel por el desierto.'},
+    {t:'¿En qué dos mandamientos se resumen todos?', o:['Amar a Dios sobre todas las cosas y al prójimo como a ti mismo','Rezar y ayunar','Ir a misa y estudiar'], pista:'Jesús dijo que lo más importante es el amor.'},
+    {t:'¿Qué nos pide el tercer mandamiento?', o:['Santificar las fiestas, como ir a misa el domingo','No robar','No mentir'], pista:'Es el día del Señor.'},
+    {t:'¿Qué nos pide el cuarto mandamiento?', o:['Honrar a tu padre y a tu madre','No matar','Santificar las fiestas'], pista:'Habla de nuestra familia.'},
+    {t:'¿Qué mandamiento nos enseña a decir siempre la verdad?', o:['No dirás falso testimonio ni mentirás','No robarás','Honrarás a tu padre y a tu madre'], pista:'Habla de las mentiras.'}
+  ],
+  america:[
+    {t:'¿Qué representa el cirio pascual?', o:['A Jesús resucitado, luz del mundo','El agua del Bautismo','La silla del sacerdote'], pista:'Es una vela muy alta.'},
+    {t:'¿Dónde recibimos el Bautismo?', o:['En la pila bautismal','En el confesionario','En el sagrario'], pista:'Es una fuente con agua.'},
+    {t:'¿Cómo se llama la silla del sacerdote?', o:['La sede','El ambón','El altar'], pista:'Desde allí preside la celebración.'},
+    {t:'¿Qué nos avisa que Jesús está en el sagrario?', o:['Una lámpara encendida','Una campana','Una flor'], pista:'Siempre está prendida.'},
+    {t:'¿Qué traen las vinajeras?', o:['El agua y el vino','Las hostias','Las velas'], pista:'Son dos jarritas.'},
+    {t:'¿Con qué paño se seca y limpia el cáliz?', o:['El purificador','El corporal','El misal'], pista:'Es un pañito largo.'},
+    {t:'¿Dónde se guardan las hostias consagradas?', o:['En el copón','En la patena','En las vinajeras'], pista:'Es una copa con tapa.'}
+  ],
+  europa:[
+    {t:'¿Con qué tiempo empieza el año litúrgico?', o:['Adviento','Navidad','Cuaresma'], pista:'Son cuatro semanas de espera.'},
+    {t:'¿De qué color es el Tiempo Ordinario?', o:['Verde','Rojo','Blanco'], pista:'Es el color de la esperanza.'},
+    {t:'¿Cuántos días dura la Cuaresma?', o:['Cuarenta','Siete','Cien'], pista:'Son cuatro decenas de días.'},
+    {t:'¿Qué color usa el sacerdote en Pentecostés?', o:['Rojo','Morado','Verde'], pista:'Es el color del fuego del Espíritu Santo.'},
+    {t:'¿Qué oración rezamos antes de comulgar?', o:['El Padre Nuestro','El Credo','El Gloria'], pista:'Es la oración que Jesús nos enseñó.'},
+    {t:'¿Qué decimos después de escuchar la Palabra y la homilía?', o:['El Credo','El Gloria','Pueden ir en paz'], pista:'Decimos en qué creemos.'},
+    {t:'¿En qué parte de la misa recibimos la bendición final?', o:['En el rito de conclusión','En los ritos iniciales','En la liturgia de la Palabra'], pista:'Es al final de la misa.'},
+    {t:'¿Quién es la patrona de las misiones?', o:['Santa Teresita del Niño Jesús','Santa Rosa de Lima','Santa Lucía'], pista:'Era una monja carmelita francesa que rezaba por los misioneros.'},
+    {t:'¿Qué significa la palabra «Adviento»?', o:['Venida','Despedida','Descanso'], pista:'Esperamos que alguien llegue.'},
+    {t:'¿A quién esperamos en Adviento?', o:['A Jesús, que viene a nosotros','A Papá Noel','A los Reyes Magos'], pista:'Nació en Belén.'},
+    {t:'¿Cuántas velas tiene la corona de Adviento?', o:['Cuatro, una por cada domingo','Siete','Doce'], pista:'El Adviento dura cuatro semanas.'},
+    {t:'¿Cómo nos preparamos en Adviento?', o:['Rezando, confesándonos y ayudando a los demás','Comprando muchos regalos','Sin hacer nada especial'], pista:'Preparamos el corazón, no solo la casa.'},
+    {t:'¿Con qué tiempo nos preparamos para la Semana Santa?', o:['La Cuaresma','El Adviento','El Tiempo Ordinario'], pista:'Son cuarenta días de oración, ayuno y limosna.'},
+    {t:'¿Qué celebramos el Domingo de Ramos?', o:['La entrada de Jesús en Jerusalén','El nacimiento de Jesús','La venida del Espíritu Santo'], pista:'La gente lo recibió con palmas.'},
+    {t:'¿Qué recordamos el Jueves Santo?', o:['La Última Cena, cuando Jesús nos dejó la Eucaristía','La resurrección','El bautismo de Jesús'], pista:'Jesús compartió el pan y el vino con sus apóstoles.'},
+    {t:'¿Qué recordamos el Viernes Santo?', o:['La muerte de Jesús en la cruz por amor a nosotros','Su nacimiento','Su ascensión al cielo'], pista:'Ese día el sacerdote se viste de rojo.'},
+    {t:'¿Qué celebramos el Domingo de Resurrección?', o:['¡Que Jesús resucitó!','Que Jesús nació','Que Jesús fue bautizado'], pista:'Es la fiesta más grande del año.'},
+    {t:'¿Cómo vivimos bien la Semana Santa?', o:['Participando en las celebraciones y acompañando a Jesús con la oración','Como unas vacaciones cualquiera','Durmiendo hasta tarde'], pista:'Acompañamos a Jesús en los días más importantes.'}
+  ],
+  oceania:[
+    {t:'¿Qué rezamos en el crucifijo al empezar el rosario?', o:['El Credo','El Ave María','El Gloria'], pista:'Decimos en qué creemos.'},
+    {t:'¿Qué oración se reza al terminar cada decena?', o:['El Gloria','El Credo','El Padre Nuestro'], pista:'Alabamos al Padre, al Hijo y al Espíritu Santo.'},
+    {t:'¿Qué misterios se rezan los jueves?', o:['Los luminosos','Los gozosos','Los dolorosos'], pista:'Hablan de la luz de Jesús.'},
+    {t:'La Resurrección de Jesús es un misterio…', o:['Glorioso','Gozoso','Doloroso'], pista:'Jesús venció a la muerte.'},
+    {t:'Las bodas de Caná son un misterio…', o:['Luminoso','Doloroso','Glorioso'], pista:'Se rezan los jueves.'},
+    {t:'¿Cuál es el símbolo de san Marcos?', o:['El león','El águila','El toro'], pista:'Su evangelio empieza con una voz en el desierto.'},
+    {t:'¿Quién escribió el evangelio más corto?', o:['Marcos','Juan','Mateo'], pista:'Su símbolo es el león.'}
+  ],
+  asia:[
+    {t:'¿Qué sacramento nos da la fuerza del Espíritu Santo?', o:['La Confirmación','El Matrimonio','La Unción de los enfermos'], pista:'Se unge la frente con el santo crisma.'},
+    {t:'¿En qué sacramento Dios perdona nuestros pecados?', o:['La Reconciliación','La Confirmación','El Orden sacerdotal'], pista:'También se llama confesión.'},
+    {t:'¿Cuáles son los sacramentos de iniciación?', o:['Bautismo, Confirmación y Eucaristía','Matrimonio y Orden sacerdotal','Reconciliación y Unción'], pista:'Con ellos empezamos la vida cristiana.'},
+    {t:'¿Cuáles son los sacramentos de sanación?', o:['Reconciliación y Unción de los enfermos','Bautismo y Eucaristía','Matrimonio y Orden sacerdotal'], pista:'Curan el alma y dan fuerza.'},
+    {t:'¿Cuál es el signo del Matrimonio?', o:['El sí de los esposos y los anillos','El agua','El pan y el vino'], pista:'Se lo ponen en el dedo.'},
+    {t:'¿Qué sacramento recibe quien será diácono, sacerdote u obispo?', o:['El Orden sacerdotal','El Matrimonio','La Confirmación'], pista:'Es un sacramento de servicio.'},
+    {t:'¿Con qué se unge la frente en la Confirmación?', o:['Con el santo crisma','Con agua','Con vino'], pista:'Es un aceite bendecido.'},
+    {t:'¿Qué santo es patrono de las misiones junto a santa Teresita?', o:['San Francisco Javier','San Pedro','San José'], pista:'Fue misionero en Asia, en la India y el Japón.'}
+  ]
+};
+
 let M=null, TOK10=0, SPR=null, FONDO=null, RETRATOS=null;
 const TECLAS=new Set();
 function crearMundo(){
@@ -1371,6 +1439,8 @@ function crearMundo(){
     M.arcos.push({id:m.id, x:a.x, y:a.y});
     const n={id:m.id, x:e.x+lado.x*40, y:e.y+lado.y*40, spr:persona(Object.assign({pantalon:'#4a3b2a'},NINOS[m.id]))};
     M.ninos.push(n); usados.push({x:n.x,y:n.y},{x:a.x,y:a.y},{x:e.x,y:e.y});
+    if(!m.banco) m.banco=m.qs.concat(BANCO10[m.id]||[]);
+    m.qs=mezclar(m.banco.slice()).slice(0,5);
     m.qs.forEach((q,k)=>{ const p=puntoEn(i,r,usados,95); M.perg.push({isla:m.id, k, x:p.x, y:p.y, hecho:false, ops:mezclar(q.o.map((t,j)=>({t,j})))}); });
     for(let k=0;k<3;k++){ const q=puntoEn(i,r,usados,70); if(q) M.frutos.push(fruto(q)); }
     for(let k=0;k<2;k++){ const p=puntoEn(i,r,usados,120), sp=PECADOS[(mi*2+k)%PECADOS.length];
@@ -1391,6 +1461,15 @@ function n10(){
   view.innerHTML=`<div class="pila">${cabecera(NIVELES[9],0)}
     ${guia(`${esc(S.name)}, llegaste a la gran misión. Jesús nos dijo: vayan por todo el mundo y anuncien el Evangelio. En la Infancia Misionera los niños ayudan a los niños de los cinco continentes. Cada continente tiene un color.`)}
     <div class="hoja colores-m">${MISION.map(m=>`<p><b class="punto" style="background:${m.c}"></b><span><b>${m.nombre}:</b> ${m.porque}</span></p>`).join('')}</div>
+    <div class="hoja pila"><h3 style="font-size:1.15rem">Los patronos de las misiones</h3>
+      <p><b>Santa Teresita del Niño Jesús</b> es la patrona de las misiones. Era una monja carmelita francesa que nunca salió de su convento, pero rezaba con muchísimo amor por los misioneros de todo el mundo.</p>
+      <p><b>San Francisco Javier</b> es patrono de las misiones junto con ella. Fue misionero en Asia y llevó a Jesús hasta la India y el Japón.</p></div>
+    <div class="hoja pila"><h3 style="font-size:1.15rem">Los mandamientos de la ley de Dios</h3>
+      <p>Dios le dio a Moisés diez mandamientos en el monte Sinaí, escritos en dos tablas de piedra. Jesús nos enseñó que se resumen en dos: <b>amar a Dios sobre todas las cosas y al prójimo como a ti mismo</b>.</p>
+      <ol style="padding-left:1.5em;font-weight:700;font-size:.95rem;line-height:1.5">
+        <li>Amarás a Dios sobre todas las cosas.</li><li>No tomarás el nombre de Dios en vano.</li><li>Santificarás las fiestas (ir a misa el domingo).</li>
+        <li>Honrarás a tu padre y a tu madre.</li><li>No matarás.</li><li>No cometerás actos impuros.</li><li>No robarás.</li>
+        <li>No dirás falso testimonio ni mentirás.</li><li>No consentirás pensamientos ni deseos impuros.</li><li>No codiciarás los bienes ajenos.</li></ol></div>
     <div class="hoja pila como"><h3 style="font-size:1.15rem">Cómo jugar</h3>
       <p>${ico('#fff','↔')}<span>Arrastra el dedo por la pantalla para caminar. En computador usa las flechas.</span></p>
       <p>${ico('#fff5dc','?')}<span>A la entrada de cada continente te espera un niño. En su tierra hay 5 pergaminos escondidos: tócalos y responde su pregunta.</span></p>
@@ -1400,13 +1479,64 @@ function n10(){
     <button class="btn" type="button" data-act="aJugar10">${M?'Continuar la misión':'Aceptar la misión'}</button></div>`;
 }
 
+/* ----- Música de aventura y efectos del mundo misionero ----- */
+const MUSICA10=(()=>{
+  let ctx=null, master=null, bus=null, timer=null, paso=0, sig=0, ruidoBuf=null;
+  const LEAD=[74,0,76,78,81,0,78,76, 74,0,71,74,79,0,78,76, 78,0,74,71,74,76,78,0, 76,0,73,69,73,0,0,0,
+              74,0,76,78,81,0,83,81, 79,0,78,79,83,0,81,79, 78,76,74,76,78,0,73,0, 76,0,73,76,74,0,0,0];
+  const BAJO=[38,43,47,45,38,43,47,45], QUINTA=[45,50,54,52,45,50,54,52];
+  const T=60/112/2, hz=m=>440*Math.pow(2,(m-69)/12);
+  function nota(m,t,dur,tipo,vol,dest){ const o=ctx.createOscillator(), g=ctx.createGain(); o.type=tipo; o.frequency.value=hz(m);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol,t+.02); g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    o.connect(g); g.connect(dest||master); o.start(t); o.stop(t+dur+.05); }
+  function desliz(a,b,t,dur,tipo,vol){ const o=ctx.createOscillator(), g=ctx.createGain(); o.type=tipo; o.frequency.setValueAtTime(hz(a),t); o.frequency.exponentialRampToValueAtTime(hz(b),t+dur);
+    g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur); o.connect(g); g.connect(bus); o.start(t); o.stop(t+dur+.05); }
+  function ruido(t,vol,dur,fc,dest){ if(!ruidoBuf){ ruidoBuf=ctx.createBuffer(1,Math.floor(ctx.sampleRate*.2),ctx.sampleRate); const d=ruidoBuf.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1; }
+    const s=ctx.createBufferSource(), f=ctx.createBiquadFilter(), g=ctx.createGain(); s.buffer=ruidoBuf; f.type='highpass'; f.frequency.value=fc;
+    g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur); s.connect(f); f.connect(g); g.connect(dest||master); s.start(t); s.stop(t+dur+.02); }
+  const volumen=()=> S.sonido===false||pantalla!=='mundo' ? 0 : (M&&M.pausa ? .16 : .42);
+  function tick(){ if(!ctx) return; if(pantalla!=='mundo'){ parar(); return; }
+    master.gain.setTargetAtTime(volumen(), ctx.currentTime, .15);
+    if(sig<ctx.currentTime) sig=ctx.currentTime+.05;
+    while(sig<ctx.currentTime+.35){ const i=paso%64, bar=Math.floor(i/8), e=i%8, m=LEAD[i];
+      if(m) nota(m,sig,T*1.7,'triangle',.11);
+      if(e===0) nota(BAJO[bar],sig,T*3.6,'triangle',.17);
+      if(e===4) nota(QUINTA[bar],sig,T*3.6,'triangle',.12);
+      if(e%2===1) ruido(sig,.02,.04,7000);
+      if(e===2||e===6) ruido(sig,.035,.08,2500);
+      sig+=T; paso++; } }
+  function iniciar(){ try{ if(!ctx){ const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return; ctx=new AC();
+      master=ctx.createGain(); master.gain.value=0; master.connect(ctx.destination); bus=ctx.createGain(); bus.gain.value=.7; bus.connect(ctx.destination); }
+    if(ctx.state==='suspended') ctx.resume(); if(!timer){ sig=ctx.currentTime+.1; timer=setInterval(tick,90); tick(); } }catch(e){} }
+  function parar(){ clearInterval(timer); timer=null; if(ctx) master.gain.setTargetAtTime(0,ctx.currentTime,.1); }
+  const N=(m,d,dur,tipo,vol)=>['n',m,d,dur,tipo,vol];
+  const SFX={
+    paso:[['r',0,.03,.05,1800]],
+    fruto:[N(84,0,.12,'sine',.18),N(88,.07,.12,'sine',.18),N(91,.14,.25,'sine',.18)],
+    golpe:[['s',62,44,0,.3,'square',.1]],
+    rezar:[N(74,0,.9,'sine',.1),N(78,.08,.9,'sine',.1),N(81,.16,.9,'sine',.1),N(86,.24,1,'sine',.08)],
+    vencida:[N(86,.1,.15,'triangle',.14),N(91,.2,.35,'triangle',.14)],
+    caida:[N(67,0,.3,'triangle',.15),N(64,.25,.3,'triangle',.15),N(60,.5,.7,'triangle',.15)],
+    confes:[N(74,0,1,'sine',.12),N(78,.15,1,'sine',.12),N(81,.3,1,'sine',.12),N(86,.45,1.3,'sine',.12)],
+    pergamino:[N(81,0,.15,'sine',.15),N(88,.09,.35,'sine',.15)],
+    correcto:[N(76,0,.15,'triangle',.16),N(79,.1,.15,'triangle',.16),N(84,.2,.4,'triangle',.16)],
+    error:[N(55,0,.18,'square',.06),N(52,.16,.3,'square',.06)],
+    hola:[N(79,0,.12,'sine',.14),N(84,.1,.3,'sine',.14)],
+    mision:[N(74,0,.18,'triangle',.16),N(78,.15,.18,'triangle',.16),N(81,.3,.18,'triangle',.16),N(86,.45,.7,'triangle',.18),N(62,.45,.7,'triangle',.12)],
+    puerta:[N(74,0,1.5,'sine',.1),N(78,0,1.5,'sine',.1),N(81,0,1.5,'sine',.1),N(86,.2,.2,'triangle',.12),N(90,.35,.2,'triangle',.12),N(93,.5,.9,'triangle',.12)]
+  };
+  function sfx(tipo){ try{ if(!ctx||S.sonido===false||!SFX[tipo]) return; if(ctx.state==='suspended') ctx.resume(); const t0=ctx.currentTime+.01;
+    SFX[tipo].forEach(s=>{ if(s[0]==='n') nota(s[1],t0+s[2],s[3],s[4],s[5],bus); else if(s[0]==='r') ruido(t0+s[1],s[2],s[3],s[4],bus); else desliz(s[1],s[2],t0+s[3],s[4],s[5],s[6]); }); }catch(e){} }
+  return {iniciar, parar, sfx};
+})();
+
 function mundo10(){
   if(!M) crearMundo();
   M.L=L; L.fase=1; M.joy=null; TECLAS.clear();
   pantalla='mundo'; pintarBarra();
   view.innerHTML=`<div class="mundo">
     <canvas id="cv10" role="img" aria-label="Mundo misionero"></canvas>
-    <div class="hud"><button class="btn sec chico pixel" type="button" data-act="mapa">Mapa</button><div class="hud2 pixel" id="info10"></div></div>
+    <div class="hud"><button class="btn sec chico pixel" type="button" data-act="mapa">Mapa</button><div class="hud2 pixel" id="info10"></div><button class="btn sec chico son11" type="button" data-act="sonido" aria-label="Sonido" aria-pressed="${S.sonido!==false}">${ICONO_SON(S.sonido!==false)}</button></div>
     <span class="oculto" id="gracia10" aria-live="polite"></span>
     <div class="ayuda10 pixel" id="ayuda10">${M.movio?'':'Arrastra el dedo para caminar'}</div>
     <button class="rezar pixel" type="button" id="rz10" data-act="rezar10">Rezar</button>
@@ -1420,6 +1550,7 @@ function mundo10(){
   cv.addEventListener('pointerup', fin); cv.addEventListener('pointercancel', fin);
   M.token=++TOK10; M.ult=0;
   requestAnimationFrame(bucle10);
+  MUSICA10.iniciar();
   if(!M.bienvenida){ M.bienvenida=true; aviso('Cruza un puente: a la entrada de cada continente te espera un niño.'); }
 }
 addEventListener('keydown', e=>{
@@ -1452,6 +1583,7 @@ function actualizar10(dt){
     const v=170, nx=j.x+ix*v*dt, ny=j.y+iy*v*dt;
     if(caminable(nx,j.y)) j.x=nx; if(caminable(j.x,ny)) j.y=ny;
     j.paso+=dt*9; j.mov=true;
+    const ps=Math.floor(j.paso/3.14); if(ps!==M.pasoS){ M.pasoS=ps; MUSICA10.sfx('paso'); }
     if(!M.movio){ M.movio=true; const a=$('#ayuda10'); if(a) a.textContent=''; }
   } else j.mov=false;
   // salir de un continente sin terminar la misión
@@ -1461,7 +1593,7 @@ function actualizar10(dt){
   const cx=j.x, cy=j.y-20;
   M.frutos.forEach(f=>{
     if(!f.on){ f.resp-=dt; if(f.resp<=0) f.on=true; return; }
-    if(Math.hypot(f.x-cx,f.y-10-cy)<30){ f.on=false; f.resp=25; sumar(12); flot('+'+f.n, '#fff3b0');
+    if(Math.hypot(f.x-cx,f.y-10-cy)<30){ f.on=false; f.resp=25; sumar(12); MUSICA10.sfx('fruto'); flot('+'+f.n, '#fff3b0');
       if(!M.vioFruto){ M.vioFruto=true; aviso(`Ese es un fruto del Espíritu Santo: ${f.n}. Los frutos llenan tus corazones de gracia.`); } }
   });
   M.pecados.forEach(p=>{
@@ -1477,17 +1609,17 @@ function actualizar10(dt){
     if(d<32 && M.inv<=0) golpe10(p);
   });
   if(M.pausa) return;
-  if(!M.actual) for(const p of M.perg){ if(!p.hecho && Math.hypot(p.x-cx,p.y-8-cy)<32){ abrirPregunta10(p); return; } }
+  if(!M.actual) for(const p of M.perg){ if(!p.hecho && Math.hypot(p.x-cx,p.y-8-cy)<32){ MUSICA10.sfx('pergamino'); abrirPregunta10(p); return; } }
   for(const n of M.ninos){ const d=Math.hypot(n.x-j.x,n.y-j.y);
     if(d<56 && M.cerca!==n.id){ M.cerca=n.id;
       if(!M.saludo[n.id] || (!M.hechos[n.id] && faltan10(n.id)===0)){ dialogo10(n.id); return; } }
     else if(d>100 && M.cerca===n.id) M.cerca=null; }
   const dc=Math.hypot(M.confes.x-j.x, M.confes.y-j.y);
   if(dc<52 && !M.enConf){ M.enConf=true;
-    if(M.gracia<100){ M.gracia=100; flot('Gracia llena','#c9f3e2'); aviso('En el sacramento de la Reconciliación Dios perdona nuestros pecados. ¡Tus corazones están llenos!'); }
+    if(M.gracia<100){ M.gracia=100; flot('Gracia llena','#c9f3e2'); MUSICA10.sfx('confes'); aviso('En el sacramento de la Reconciliación Dios perdona nuestros pecados. ¡Tus corazones están llenos!'); }
     else aviso('Este es el confesionario. Aquí Dios siempre nos perdona.'); }
   else if(dc>90) M.enConf=false;
-  if(M.puerta && Math.hypot(j.x-M.iglesia.x, j.y-(M.iglesia.y+8))<40){ terminar10(); return; }
+  if(M.puerta && Math.hypot(j.x-M.iglesia.x, j.y-(M.iglesia.y+8))<40){ MUSICA10.sfx('puerta'); terminar10(); return; }
   M.flot.forEach(f=>f.t+=dt); M.flot=M.flot.filter(f=>f.t<1.5);
   if(M.anillo){ M.anillo.t+=dt; if(M.anillo.t>.8) M.anillo=null; }
   hud10();
@@ -1503,7 +1635,7 @@ function hud10(){
   const rz=$('#rz10'); if(!rz) return; const cd=M.cdRezar>0; rz.disabled=cd; const rt=cd?String(Math.ceil(M.cdRezar)):'Rezar'; if(rz.textContent!==rt) rz.textContent=rt;
 }
 function golpe10(p){
-  sumar(-15); M.inv=1.3;
+  sumar(-15); M.inv=1.3; MUSICA10.sfx('golpe');
   const j=M.jug, d=Math.hypot(j.x-p.x,j.y-p.y)||1, nx=j.x+(j.x-p.x)/d*45, ny=j.y+(j.y-p.y)/d*45;
   if(caminable(nx,ny)){ j.x=nx; j.y=ny; }
   flot('-'+p.n,'#ffb3bf');
@@ -1512,15 +1644,15 @@ function golpe10(p){
 }
 function rezar10(){
   if(!M||M.pausa||M.cdRezar>0) return;
-  M.cdRezar=3; M.anillo={x:M.jug.x, y:M.jug.y-20, t:0};
+  M.cdRezar=3; M.anillo={x:M.jug.x, y:M.jug.y-20, t:0}; MUSICA10.sfx('rezar');
   const v=M.pecados.filter(p=>p.vivo && Math.hypot(p.x-M.jug.x,p.y-M.jug.y)<175);
   v.forEach(p=>{ p.vivo=false; p.resp=18; flot('¡Vencida!','#c9f3e2',p.x,p.y); });
-  if(v.length){ sumar(5*v.length); aviso(`Tu oración alejó la ${v.map(p=>p.n.toLowerCase()).join(' y la ')}. La ${v[0].n.toLowerCase()} se vence con ${v[0].v}.`); }
+  if(v.length){ MUSICA10.sfx('vencida'); sumar(5*v.length); aviso(`Tu oración alejó la ${v.map(p=>p.n.toLowerCase()).join(' y la ')}. La ${v[0].n.toLowerCase()} se vence con ${v[0].v}.`); }
   else flot('Amén','#fff3b0');
 }
 function modal10(html){ const m=$('#modal10'); if(m) m.innerHTML=html; if(html){ clearTimeout(tAviso); $('#aviso').classList.remove('on'); } M.pausa=!!html; M.joy=null; TECLAS.clear(); }
 function retrato(id){ return `<img src="${ninoUrl(id)}" alt="" class="retrato">`; }
-function caida10(){
+function caida10(){ MUSICA10.sfx('caida');
   modal10(`<div class="capa10"><div class="hoja pila">
     <div class="guia">${ANGEL}<div class="dice"><p id="guiaTxt">Te quedaste sin gracia. Pero Dios siempre nos perdona cuando le pedimos perdón de corazón. Vamos al confesionario de la iglesia.</p></div></div>
     <button class="btn" type="button" data-act="confesar10">Ir al confesionario</button></div></div>`);
@@ -1552,22 +1684,22 @@ function responder10(j){
   const p=M.actual; if(!p||L.espera) return;
   const m=mis10(p.isla), q=m.qs[p.k];
   if(j===0){
-    L.espera=true; const b=$('#modal10 [data-i="0"]'); if(b) b.classList.add('acierto');
+    MUSICA10.sfx('correcto'); L.espera=true; const b=$('#modal10 [data-i="0"]'); if(b) b.classList.add('acierto');
     document.querySelectorAll('#modal10 .opc').forEach(x=>x.disabled=true);
     setTimeout(()=>{ L.espera=false; if(!M||M.actual!==p) return;
       p.hecho=true; M.actual=null; sumar(8); flot('+gracia','#c9f3e2'); modal10('');
       const f=faltan10(p.isla);
       aviso(f?`¡Correcto! Te faltan ${f} pergaminos en ${m.nombre}.`:`¡Encontraste los ${m.qs.length} pergaminos de ${m.nombre}! Vuelve con ${m.nino} a la entrada.`); },700);
-  } else { L.errores++; abrirPregunta10(p, 'Todavía no. Pista: '+q.pista); }
+  } else { MUSICA10.sfx('error'); L.errores++; abrirPregunta10(p, 'Todavía no. Pista: '+q.pista); }
 }
 function dialogo10(id){
   const m=mis10(id), f=faltan10(id), n=m.qs.length;
   let txt, btn='¡Vamos!';
-  M.saludo[id]=true;
+  if(M.hechos[id]||f) MUSICA10.sfx('hola'); M.saludo[id]=true;
   if(M.hechos[id]) txt=`¡Gracias otra vez, ${esc(S.name)}! Ya les estoy contando a mis amigos todo lo que aprendí de Jesús.`;
   else if(f) txt=`¡Hola, ${esc(S.name)}! Soy ${m.nino}. ${NINOS[id].yo} En ${m.nombre} hay ${n} pergaminos escondidos y cada uno me enseña algo. ¿Me ayudas a encontrarlos? Cuidado con las sombras del pecado.`;
   else {
-    M.hechos[id]=true; sumar(15);
+    M.hechos[id]=true; sumar(15); MUSICA10.sfx('mision');
     M.pecados.forEach(p=>{ if(p.isla===id) p.vivo=false; });
     txt=`¡Gracias, ${esc(S.name)}! Con tu ayuda aprendí mucho de Jesús. Ahora ${m.nombre} brilla con la luz del Evangelio y las sombras del pecado se fueron.`;
     btn='Seguir la misión';
@@ -2458,7 +2590,7 @@ function manejar(e,b,a,d){
   if(a==='rezar10'){ rezar10(); return; }
   if(a==='q10'){ responder10(+d.i); return; }
   if(a==='aJugar11'){ SONIDO.iniciar(); batalla11(); SONIDO.tocar('bat'); return; }
-  if(a==='sonido'){ const on=S.sonido!==false; SONIDO.silencio(on); b.setAttribute('aria-pressed', String(!on)); b.innerHTML=ICONO_SON(!on); aviso(on?'Sonido apagado':'Sonido encendido'); return; }
+  if(a==='sonido'){ const on=S.sonido!==false; try{ SONIDO.silencio(on); }catch(_){} S.sonido=!on; b.setAttribute('aria-pressed', String(!on)); b.innerHTML=ICONO_SON(!on); aviso(on?'Sonido apagado':'Sonido encendido'); return; }
   if(a==='luz11'){ luz11(); return; }
   if(a==='cruz11'){ cruz11(); return; }
   if(a==='ayuda11'){ ayuda11(d.id); return; }
